@@ -56,7 +56,8 @@ nav {
   display: block;
   text-align: center;
 }
-nav a {
+nav a,
+nav a:visited {
   color: white;
   text-decoration: none;
   margin: 0px 10px;
@@ -64,6 +65,10 @@ nav a {
 nav a:hover {
   color: rgb(93, 143, 250);
   text-decoration: none;
+}
+a:visited,
+a:hover {
+  color: rgb(93, 143, 250);
 }
 @media only screen and (min-width: 992px) {
   .logo {
