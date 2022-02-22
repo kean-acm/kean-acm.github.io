@@ -156,3 +156,24 @@ a:hover {
   display: block;
   padding: 20px 0px;
 }
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+.tooltip div {
+  visibility: hidden;
+  background-color: #113b51;
+  color: #fff;
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 6px;
+
+  bottom: 100%;
+  margin-left: -60px;
+  position: absolute;
+  z-index: 1;
+}
+.tooltip:hover div {
+  visibility: visible;
+}
