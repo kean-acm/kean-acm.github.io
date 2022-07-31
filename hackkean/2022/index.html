@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.1" />
+    <title>Kean ACM - Home</title>
+    <link rel="stylesheet" href="css/main.css?ver=2022.22.2" />
+    <script
+      src="https://kit.fontawesome.com/976bcf3f29.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+
+    .mySlides {
+      display: none
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 83.2969px;
+      position: relative;
+      height: 250px;
+      overflow-y: scroll;
+    }
+
+    /* Top & bottom scroll buttons */
+    .topScrollBtn, .bottomScrollBtn {
+      cursor: pointer;
+      position: absolute;
+      top: 6%;
+      left: 30.64845px;
+      transform: rotate(90deg);
+      width: auto;
+      padding: 5px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "bottom scroll button" to the bottom */
+    .bottomScrollBtn {
+      top: 98%;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .topScrollBtn:hover, .bottomScrollBtn:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      p {
+        font-size: 11px
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      .modal-content {
+        width: 100%;
+      }
+    }
+
+    .dropDown:hover {
+      color: red;
+      cursor: pointer;
+    }
+
+    .slideshow-container > div > div > img:hover {
+      cursor: pointer;
+      opacity: 0.3;
+    }
+
+    img.mainImage {
+      position: absolute;
+      top: 0;
+      left: 100px;
+      max-width: 30%;
+      cursor: pointer; 
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .slideshow-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .slideshow-container {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    /* Add Animation */
+    .modal-content {  
+      -webkit-animation-name: zoom;
+      -webkit-animation-duration: 0.6s;
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+      from {-webkit-transform:scale(0)} 
+      to {-webkit-transform:scale(1)}
+    }
+
+    @keyframes zoom {
+      from {transform:scale(0)} 
+      to {transform:scale(1)}
+    }
+
+    /* The Close Button */
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .prev, .next, .text {
+        font-size: 11px
+      }
+    }
+  </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href=""><img src="assets/ACM_Bold.png" alt="Home" /></a>
+        <div class="logo-text">
+          <h1 class="title">Kean University ACM</h1>
+          <h2 class="subtitle">Association for Computing Machinery</h2>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="index.html">Events</a>
+        <a href="https://kean.campuslabs.com/engage/organization/acm"
+          >Join on Cougarlink</a
+        >
+        <a href="">Hackkean 2022</a>
+        <a href="http://yoda.kean.edu/~samurai/">Code Samurai</a>
+        <a href="http://yoda.kean.edu/studyplans/">Resources</a>
+      </nav>
+    </header>
+    <main>
+      <div class="page-content">
+        <h1>Hack Kean 2022</h1>
+        <h2>Kean University's Annual Hackathon</h2>
+        <p>
+          Join us for a day online as we build apps, projects, and more. We will
+          provide a comfortable and enlivening atmosphere for you to build out
+          progressive, innovative, and crazy ideas. At HackKean, you&#39;ll meet
+          fellow hackers, learn new technologies, and hone your skills. We'll
+          have prizes, workshops, and more... Don&#39;t have a team or an idea?
+          Don&#39;t worry! We&#39;ll connect you with others and give you the
+          tools to build something incredible. Whether you're a seasoned
+          hackathon-goer or just getting started, we&#39;d love to see you here!
+        </p>
+        <h1>Winners!</h1>
+        <span class="line">
+          <i class="fa fa-award"></i>
+          <span
+            >1st Place: <u>Capsule Wars</u> by
+            <div class="tooltip">
+              Antonios Theocharopoulos
+              <div>Academy for Information Technology</div>
+            </div>
+            ,
+            <div class="tooltip">
+              Arya Chhabra
+              <div>Academy for Information Technology</div>
+            </div>
+            , and
+            <div class="tooltip">
+              Shourya Chhabra
+              <div>Union County Magnet High School</div>
+            </div>
+          </span>
+        </span>
+        <span class="line">
+          <i class="fa fa-award"></i>
+          <span
+            >2nd Place: <u>Node2Node</u> by
+            <div class="tooltip">
+              Joshua Bandy
+              <div>New Providence High School</div>
+            </div>
+            ,
+            <div class="tooltip">
+              Valmik Nahata
+              <div>New Providence High School</div>
+            </div>
+            , and
+            <div class="tooltip">
+              Lawrence Xie
+              <div>New Providence High School</div>
+            </div>
+          </span>
+        </span>
+        <span class="line">
+          <i class="fa fa-award"></i>
+          <span
+            >3rd Place: <u>Bonobo's Adventure</u> by
+            <div class="tooltip">
+              Jalen Thompson
+              <div>Diana C Lobosco STEM Academy</div>
+            </div>
+            and
+            <div class="tooltip">
+              Max Mendez
+              <div>Diana C Lobosco STEM Academy</div>
+            </div>
+          </span>
+        </span>
+        <h1>Project Showcase</h1>
+          <p>Traffic Light Demonstration
+            <a id="trafficLight" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container1" style="display:none;"></div>
+          </div>
+          <p>Base Conversions
+            <a id="baseConversions" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container2" style="display:none;"></div>
+          </div>
+          <p>EatTogether
+            <a id="eatTogether" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container3" style="display:none;"></div>
+          </div>
+          <p>CoderLog
+            <a id="coderLog" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container4" style="display:none;"></div>
+          </div>
+          <p>KAISER TRANSLITERATOR
+            <a id="kaiserTransliterator" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container5" style="display:none;"></div>
+          </div>
+          <p>Climate Crisis
+            <a id="climateCrisis" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container6" style="display:none;"></div>
+          </div>
+          <p>Bonobo's Adventure
+            <a id="bonobosAdventure" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container7" style="display:none;"></div>
+          </div>
+          <p>Crafty Messages
+            <a id="craftyMessages" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container8" style="display:none;"></div>
+          </div>
+          <p>ALON Virtual Assistant
+            <a id="alonVirtualAssistant" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container9" style="display:none;"></div>
+          </div>
+          <p>Bitcoin Price Predictor
+            <a id="bitcoinPricePredictor" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container10" style="display:none;"></div>
+          </div>
+          <p>Calc-meleon
+            <a id="calcMeleon" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container11" style="display:none;"></div>
+          </div>
+          <p>Adolescent Bot
+            <a id="adolescentBot" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container12" style="display:none;"></div>
+          </div>
+          <p>Node2Node
+            <a id="node2Node" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container13" style="display:none;"></div>
+          </div>
+          <p>BrainStein
+            <a id="brainStein" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container14" style="display:none;"></div>
+          </div>
+          <p>Sea Cal
+            <a id="seaCal" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container15" style="display:none;"></div>
+          </div>
+          <p>Graphing Simulator
+            <a id="graphingSimulator" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container16" style="display:none;"></div>
+          </div>
+          <p>RoboSlayer
+            <a id="roboSlayer" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container17" style="display:none;"></div>
+          </div>
+          <p>Flow Field Builder
+            <a id="flowFieldBuilder" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container18" style="display:none;"></div>
+          </div>
+          <p>When Time Stood Still - a Kean Text Adventure game
+            <a id="keanTextGame" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container19" style="display:none;"></div>
+          </div>
+          <p>Cerebus
+            <a id="cerebus" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container20" style="display:none;"></div>
+          </div>
+          <p>Walk?
+            <a id="walk" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container21" style="display:none;"></div>
+          </div>
+          <p>Capsule Wars
+            <a id="capsuleWars" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container22" style="display:none;"></div>
+          </div>
+          <p>Imperfect Date
+            <a id="imperfectDate" href="javascript:;" style="color:#000000;text-decoration:none">
+              <span class="dropDown" style="display:inline-block;">
+                &#x25BC;
+              </span>
+            </a>
+          </p>
+          <div class="column-container" style="position:relative;">
+            <div class="slideshow-container" id="slideshow-container23" style="display:none;"></div>
+          </div>
+          <br>
+      </div>
+    </main>
+    <script>
+
+      // start executing the code
+
+      $(document).ready(function(){
+
+        $("#trafficLight").on("click", function(){
+          if (document.getElementById("slideshow-container1").style.display === "none") {
+            document.getElementById("trafficLight").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container1").style.display = "block";
+            document.getElementById("slideshow-container1").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container1").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container1").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container1").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container1").style.display === "block") {
+            document.getElementById("trafficLight").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container1").scrollTop = 0;
+            document.getElementById("slideshow-container1").style.display = "none";
+            document.getElementById("slideshow-container1").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container1").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container1").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container1").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container1").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container1").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container1").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#baseConversions").on("click", function(){
+          if (document.getElementById("slideshow-container2").style.display === "none") {
+            document.getElementById("baseConversions").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container2").style.display = "block";
+            document.getElementById("slideshow-container2").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container2").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container2").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container2").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container2").style.display === "block") {
+            document.getElementById("baseConversions").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container2").scrollTop = 0;
+            document.getElementById("slideshow-container2").style.display = "none";
+            document.getElementById("slideshow-container2").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container2").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container2").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container2").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container2").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container2").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container2").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#eatTogether").on("click", function(){
+          if (document.getElementById("slideshow-container3").style.display === "none") {
+            document.getElementById("eatTogether").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container3").style.display = "block";
+            document.getElementById("slideshow-container3").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container3").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container3").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container3").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container3").style.display === "block") {
+            document.getElementById("eatTogether").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container3").scrollTop = 0;
+            document.getElementById("slideshow-container3").style.display = "none";
+            document.getElementById("slideshow-container3").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container3").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container3").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container3").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container3").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container3").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container3").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#coderLog").on("click", function(){
+          if (document.getElementById("slideshow-container4").style.display === "none") {
+            document.getElementById("coderLog").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container4").style.display = "block";
+            document.getElementById("slideshow-container4").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container4").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container4").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container4").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container4").style.display === "block") {
+            document.getElementById("coderLog").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container4").scrollTop = 0;
+            document.getElementById("slideshow-container4").style.display = "none";
+            document.getElementById("slideshow-container4").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container4").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container4").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container4").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container4").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container4").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container4").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#kaiserTransliterator").on("click", function(){
+          if (document.getElementById("slideshow-container5").style.display === "none") {
+            document.getElementById("kaiserTransliterator").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container5").style.display = "block";
+            document.getElementById("slideshow-container5").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container5").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container5").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container5").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container5").style.display === "block") {
+            document.getElementById("kaiserTransliterator").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container5").scrollTop = 0;
+            document.getElementById("slideshow-container5").style.display = "none";
+            document.getElementById("slideshow-container5").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container5").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container5").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container5").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container5").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container5").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container5").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#climateCrisis").on("click", function(){
+          if (document.getElementById("slideshow-container6").style.display === "none") {
+            document.getElementById("climateCrisis").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container6").style.display = "block";
+            document.getElementById("slideshow-container6").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container6").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container6").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container6").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container6").style.display === "block") {
+            document.getElementById("climateCrisis").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container6").scrollTop = 0;
+            document.getElementById("slideshow-container6").style.display = "none";
+            document.getElementById("slideshow-container6").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container6").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container6").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container6").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container6").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container6").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container6").getElementsByTagName("img")[0].src;
+              }      
+        });
+
+        $("#bonobosAdventure").on("click", function(){
+          if (document.getElementById("slideshow-container7").style.display === "none") {
+            document.getElementById("bonobosAdventure").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container7").style.display = "block";
+            document.getElementById("slideshow-container7").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container7").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container7").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container7").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container7").style.display === "block") {
+            document.getElementById("bonobosAdventure").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container7").scrollTop = 0;
+            document.getElementById("slideshow-container7").style.display = "none";
+            document.getElementById("slideshow-container7").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container7").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container7").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container7").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container7").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container7").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container7").getElementsByTagName("img")[0].src;
+              }      
+        });
+
+        $("#craftyMessages").on("click", function(){
+          if (document.getElementById("slideshow-container8").style.display === "none") {
+            document.getElementById("craftyMessages").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container8").style.display = "block";
+            document.getElementById("slideshow-container8").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container8").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container8").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container8").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container8").style.display === "block") {
+            document.getElementById("craftyMessages").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container8").scrollTop = 0;
+            document.getElementById("slideshow-container8").style.display = "none";
+            document.getElementById("slideshow-container8").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container8").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container8").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container8").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container8").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container8").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container8").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#alonVirtualAssistant").on("click", function(){
+          if (document.getElementById("slideshow-container9").style.display === "none") {
+            document.getElementById("alonVirtualAssistant").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container9").style.display = "block";
+            document.getElementById("slideshow-container9").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container9").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container9").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container9").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container9").style.display === "block") {
+            document.getElementById("alonVirtualAssistant").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container9").scrollTop = 0;
+            document.getElementById("slideshow-container9").style.display = "none";
+            document.getElementById("slideshow-container9").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container9").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container9").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container9").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container9").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container9").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container9").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#bitcoinPricePredictor").on("click", function(){
+          if (document.getElementById("slideshow-container10").style.display === "none") {
+            document.getElementById("bitcoinPricePredictor").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container10").style.display = "block";
+            document.getElementById("slideshow-container10").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container10").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container10").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container10").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container10").style.display === "block") {
+            document.getElementById("bitcoinPricePredictor").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container10").scrollTop = 0;
+            document.getElementById("slideshow-container10").style.display = "none";
+            document.getElementById("slideshow-container10").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container10").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container10").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container10").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container10").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container10").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container10").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#calcMeleon").on("click", function(){
+          if (document.getElementById("slideshow-container11").style.display === "none") {
+            document.getElementById("calcMeleon").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container11").style.display = "block";
+            document.getElementById("slideshow-container11").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container11").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container11").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container11").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container11").style.display === "block") {
+            document.getElementById("calcMeleon").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container11").scrollTop = 0;
+            document.getElementById("slideshow-container11").style.display = "none";
+            document.getElementById("slideshow-container11").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container11").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container11").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container11").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container11").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container11").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container11").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#adolescentBot").on("click", function(){
+          if (document.getElementById("slideshow-container12").style.display === "none") {
+            document.getElementById("adolescentBot").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container12").style.display = "block";
+            document.getElementById("slideshow-container12").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container12").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container12").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container12").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container12").style.display === "block") {
+            document.getElementById("adolescentBot").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container12").scrollTop = 0;
+            document.getElementById("slideshow-container12").style.display = "none";
+            document.getElementById("slideshow-container12").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container12").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container12").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container12").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container12").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container12").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container12").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#node2Node").on("click", function(){
+          if (document.getElementById("slideshow-container13").style.display === "none") {
+            document.getElementById("node2Node").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container13").style.display = "block";
+            document.getElementById("slideshow-container13").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container13").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container13").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container13").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container13").style.display === "block") {
+            document.getElementById("node2Node").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container13").scrollTop = 0;
+            document.getElementById("slideshow-container13").style.display = "none";
+            document.getElementById("slideshow-container13").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container13").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container13").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container13").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container13").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container13").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container13").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#brainStein").on("click", function(){
+          if (document.getElementById("slideshow-container14").style.display === "none") {
+            document.getElementById("brainStein").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container14").style.display = "block";
+            document.getElementById("slideshow-container14").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container14").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container14").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container14").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container14").style.display === "block") {
+            document.getElementById("brainStein").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container14").scrollTop = 0;
+            document.getElementById("slideshow-container14").style.display = "none";
+            document.getElementById("slideshow-container14").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container14").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container14").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container14").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container14").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container14").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container14").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#seaCal").on("click", function(){
+          if (document.getElementById("slideshow-container15").style.display === "none") {
+            document.getElementById("seaCal").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container15").style.display = "block";
+            document.getElementById("slideshow-container15").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container15").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container15").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container15").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container15").style.display === "block") {
+            document.getElementById("seaCal").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container15").scrollTop = 0;
+            document.getElementById("slideshow-container15").style.display = "none";
+            document.getElementById("slideshow-container15").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container15").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container15").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container15").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container15").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container15").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container15").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#graphingSimulator").on("click", function(){
+          if (document.getElementById("slideshow-container16").style.display === "none") {
+            document.getElementById("graphingSimulator").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container16").style.display = "block";
+            document.getElementById("slideshow-container16").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container16").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container16").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container16").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container16").style.display === "block") {
+            document.getElementById("graphingSimulator").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container16").scrollTop = 0;
+            document.getElementById("slideshow-container16").style.display = "none";
+            document.getElementById("slideshow-container16").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container16").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container16").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container16").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container16").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container16").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container16").getElementsByTagName("img")[0].src;
+          }      
+        });            
+
+        $("#roboSlayer").on("click", function(){
+          if (document.getElementById("slideshow-container17").style.display === "none") {
+            document.getElementById("roboSlayer").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container17").style.display = "block";
+            document.getElementById("slideshow-container17").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container17").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container17").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container17").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container17").style.display === "block") {
+            document.getElementById("roboSlayer").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container17").scrollTop = 0;
+            document.getElementById("slideshow-container17").style.display = "none";
+            document.getElementById("slideshow-container17").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container17").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container17").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container17").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container17").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container17").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container17").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#flowFieldBuilder").on("click", function(){
+          if (document.getElementById("slideshow-container18").style.display === "none") {
+            document.getElementById("flowFieldBuilder").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container18").style.display = "block";
+            document.getElementById("slideshow-container18").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container18").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container18").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container18").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container18").style.display === "block") {
+            document.getElementById("flowFieldBuilder").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container18").scrollTop = 0;
+            document.getElementById("slideshow-container18").style.display = "none";
+            document.getElementById("slideshow-container18").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container18").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container18").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container18").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container18").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container18").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container18").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#keanTextGame").on("click", function(){
+          if (document.getElementById("slideshow-container19").style.display === "none") {
+            document.getElementById("keanTextGame").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container19").style.display = "block";
+            document.getElementById("slideshow-container19").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container19").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container19").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container19").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container19").style.display === "block") {
+            document.getElementById("keanTextGame").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container19").scrollTop = 0;
+            document.getElementById("slideshow-container19").style.display = "none";
+            document.getElementById("slideshow-container19").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container19").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container19").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container19").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container19").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container19").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container19").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#cerebus").on("click", function(){
+          if (document.getElementById("slideshow-container20").style.display === "none") {
+            document.getElementById("cerebus").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container20").style.display = "block";
+            document.getElementById("slideshow-container20").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container20").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container20").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container20").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container20").style.display === "block") {
+            document.getElementById("cerebus").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container20").scrollTop = 0;
+            document.getElementById("slideshow-container20").style.display = "none";
+            document.getElementById("slideshow-container20").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container20").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container20").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container20").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container20").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container20").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container20").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#walk").on("click", function(){
+          if (document.getElementById("slideshow-container21").style.display === "none") {
+            document.getElementById("walk").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container21").style.display = "block";
+            document.getElementById("slideshow-container21").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container21").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container21").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container21").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container21").style.display === "block") {
+            document.getElementById("walk").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container21").scrollTop = 0;
+            document.getElementById("slideshow-container21").style.display = "none";
+            document.getElementById("slideshow-container21").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container21").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container21").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container21").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container21").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container21").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container21").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#capsuleWars").on("click", function(){
+          if (document.getElementById("slideshow-container22").style.display === "none") {
+            document.getElementById("capsuleWars").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container22").style.display = "block";
+            document.getElementById("slideshow-container22").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container22").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container22").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container22").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container22").style.display === "block") {
+            document.getElementById("capsuleWars").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container22").scrollTop = 0;
+            document.getElementById("slideshow-container22").style.display = "none";
+            document.getElementById("slideshow-container22").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container22").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container22").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container22").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container22").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container22").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container22").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $("#imperfectDate").on("click", function(){
+          if (document.getElementById("slideshow-container23").style.display === "none") {
+            document.getElementById("imperfectDate").getElementsByTagName("span")[0].style.transform="rotate(180deg)";
+            document.getElementById("slideshow-container23").style.display = "block";
+            document.getElementById("slideshow-container23").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container23").parentNode.getElementsByTagName("img").length-2].style.display = "block";
+            document.getElementById("slideshow-container23").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+            document.getElementById("slideshow-container23").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "block";
+          } else if (document.getElementById("slideshow-container23").style.display === "block") {
+            document.getElementById("imperfectDate").getElementsByTagName("span")[0].style.transform="rotate(360deg)";
+            document.getElementById("slideshow-container23").scrollTop = 0;
+            document.getElementById("slideshow-container23").style.display = "none";
+            document.getElementById("slideshow-container23").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container23").parentNode.getElementsByTagName("img").length-2].style.display = "none";
+            document.getElementById("slideshow-container23").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container23").parentNode.getElementsByTagName("div")[0].parentNode.getElementsByTagName("div")[0].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "none";
+            document.getElementById("slideshow-container23").parentNode.getElementsByTagName("img")[document.getElementById("slideshow-container23").parentNode.getElementsByTagName("img").length-2].src = document.getElementById("slideshow-container23").getElementsByTagName("img")[0].src;
+          }      
+        });
+
+        $(document).ready(function(){
+
+          $("img").on("click", function(e) {
+            var imgPosition = $(this).data("position");
+            var columContainer = $(this).parents(".column-container");
+            event.stopPropagation();
+            if (e.target.getAttribute("class") == "mainImage") {
+              e.target.nextElementSibling.style.display = "block";
+              e.target.nextElementSibling.children[1].src = e.target.src
+            } else {
+              columContainer.find(".mainImage:first").prop("src", e.target.src).data("position", imgPosition);
+            }
+          });
+
+          // Load the prev image from the modal
+          $(".modal .prev").on("click", function(){
+            var columContainer = $(this).parents(".column-container");
+            var position = columContainer.find(".mainImage:first").data("position");
+            var prevPosition = position - 1;
+
+            // check if there is a previous image to display
+            var columnDiv = columContainer.find(".column").filter(function(index){
+              return index == prevPosition;
+            });
+
+            if(columnDiv.length){
+              var imgSrc = columnDiv.find("img:first").prop("src");
+
+              columContainer.find(".mainImage:first")
+              .prop("src", imgSrc)
+              .data("position", prevPosition);
+              
+              columContainer.find(".modal-content").prop("src", imgSrc);
+            }
+
+          });
+
+          // Load the next image from the modal
+          $(".modal .next").on("click", function(){
+            var columContainer = $(this).parents(".column-container");
+            var position = columContainer.find(".mainImage:first").data("position");
+            var nextPosition = position + 1;
+
+            // check if there is a next image to display
+            var columnDiv = columContainer.find(".column").filter(function(index){
+              return index == nextPosition;
+            });
+
+            if(columnDiv.length){
+              var imgSrc = columnDiv.find("img:first").prop("src");
+
+              columContainer.find(".mainImage:first")
+              .prop("src", imgSrc)
+              .data("position", nextPosition);
+              
+              columContainer.find(".modal-content").prop("src", imgSrc);
+            }
+
+          });
+
+          $("span.close").on("click", function() {
+            this.parentNode.style.display = "none";
+          });
+
+        });
+
+        const imagesList1 = [
+          { url: "HackKean Project - Anusha Magdum/HackKean Project - Anusha Magdum_page-0001.png", caption: "Caption 1" },
+          { url: "HackKean Project - Anusha Magdum/HackKean Project - Anusha Magdum_page-0002.png", caption: "Caption 2" },
+          { url: "HackKean Project - Anusha Magdum/HackKean Project - Anusha Magdum_page-0003.png", caption: "Caption 3" },
+          { url: "HackKean Project - Anusha Magdum/HackKean Project - Anusha Magdum_page-0004.png", caption: "Caption 4" },
+          { url: "HackKean Project - Anusha Magdum/HackKean Project - Anusha Magdum_page-0005.png", caption: "Caption 5" },
+        ];
+
+        const imagesList2 = [
+          { url: "HackKean2022Presentation - Joseph Waldron/HackKean2022Presentation - Joseph Waldron_page-0001.png", caption: "Caption 1" },
+          { url: "HackKean2022Presentation - Joseph Waldron/HackKean2022Presentation - Joseph Waldron_page-0002.png", caption: "Caption 2" },
+          { url: "HackKean2022Presentation - Joseph Waldron/HackKean2022Presentation - Joseph Waldron_page-0003.png", caption: "Caption 3" },
+          { url: "HackKean2022Presentation - Joseph Waldron/HackKean2022Presentation - Joseph Waldron_page-0004.png", caption: "Caption 4" },
+          { url: "HackKean2022Presentation - Joseph Waldron/HackKean2022Presentation - Joseph Waldron_page-0005.png", caption: "Caption 5" },
+          { url: "HackKean2022Presentation - Joseph Waldron/HackKean2022Presentation - Joseph Waldron_page-0006.png", caption: "Caption 6" },
+          { url: "HackKean2022Presentation - Joseph Waldron/HackKean2022Presentation - Joseph Waldron_page-0007.png", caption: "Caption 7" },
+        ];
+
+        const imagesList3 = [
+          { url: "Eat Together Presentation - Tzu-Han Lin/Eat Together Presentation - Tzu-Han Lin.pptx_page-0001.png", caption: "Caption 1" },
+          { url: "Eat Together Presentation - Tzu-Han Lin/Eat Together Presentation - Tzu-Han Lin.pptx_page-0002.png", caption: "Caption 2" },
+          { url: "Eat Together Presentation - Tzu-Han Lin/Eat Together Presentation - Tzu-Han Lin.pptx_page-0003.png", caption: "Caption 3" },
+          { url: "Eat Together Presentation - Tzu-Han Lin/Eat Together Presentation - Tzu-Han Lin.pptx_page-0004.png", caption: "Caption 4" },
+          { url: "Eat Together Presentation - Tzu-Han Lin/Eat Together Presentation - Tzu-Han Lin.pptx_page-0005.png", caption: "Caption 5" },
+          { url: "Eat Together Presentation - Tzu-Han Lin/Eat Together Presentation - Tzu-Han Lin.pptx_page-0006.png", caption: "Caption 6" },
+          { url: "Eat Together Presentation - Tzu-Han Lin/Eat Together Presentation - Tzu-Han Lin.pptx_page-0007.png", caption: "Caption 7" },
+          { url: "Eat Together Presentation - Tzu-Han Lin/Eat Together Presentation - Tzu-Han Lin.pptx_page-0008.png", caption: "Caption 8" },
+          { url: "Eat Together Presentation - Tzu-Han Lin/Eat Together Presentation - Tzu-Han Lin.pptx_page-0009.png", caption: "Caption 9" },
+        ];
+
+        const imagesList4 = [
+          { url: "HackKean 2022 Presentation CoderLog - Rayed Chowdhury/HackKean 2022 Presentation CoderLog - Rayed Chowdhury_page-0001.png", caption: "Caption 1" },
+          { url: "HackKean 2022 Presentation CoderLog - Rayed Chowdhury/HackKean 2022 Presentation CoderLog - Rayed Chowdhury_page-0002.png", caption: "Caption 2" },
+          { url: "HackKean 2022 Presentation CoderLog - Rayed Chowdhury/HackKean 2022 Presentation CoderLog - Rayed Chowdhury_page-0003.png", caption: "Caption 3" },
+          { url: "HackKean 2022 Presentation CoderLog - Rayed Chowdhury/HackKean 2022 Presentation CoderLog - Rayed Chowdhury_page-0004.png", caption: "Caption 4" },
+          { url: "HackKean 2022 Presentation CoderLog - Rayed Chowdhury/HackKean 2022 Presentation CoderLog - Rayed Chowdhury_page-0005.png", caption: "Caption 5" },
+          { url: "HackKean 2022 Presentation CoderLog - Rayed Chowdhury/HackKean 2022 Presentation CoderLog - Rayed Chowdhury_page-0006.png", caption: "Caption 6" },
+          { url: "HackKean 2022 Presentation CoderLog - Rayed Chowdhury/HackKean 2022 Presentation CoderLog - Rayed Chowdhury_page-0007.png", caption: "Caption 7" },
+        ];
+
+        const imagesList5 = [
+          { url: "Presentation - Max K/Presentation - Max K_page-0001.png", caption: "Caption 1" },
+          { url: "Presentation - Max K/Presentation - Max K_page-0002.png", caption: "Caption 2" },
+          { url: "Presentation - Max K/Presentation - Max K_page-0003.png", caption: "Caption 3" },
+          { url: "Presentation - Max K/Presentation - Max K_page-0004.png", caption: "Caption 4" },
+          { url: "Presentation - Max K/Presentation - Max K_page-0005.png", caption: "Caption 5" },
+          { url: "Presentation - Max K/Presentation - Max K_page-0006.png", caption: "Caption 6" },
+          { url: "Presentation - Max K/Presentation - Max K_page-0007.png", caption: "Caption 7" },
+          { url: "Presentation - Max K/Presentation - Max K_page-0008.png", caption: "Caption 8" },
+          { url: "Presentation - Max K/Presentation - Max K_page-0009.png", caption: "Caption 9" },
+          { url: "Presentation - Max K/Presentation - Max K_page-0010.png", caption: "Caption 10" },                
+        ];
+
+        const imagesList6 = [
+          { url: "Hackathon Project Slideshow - Austin Shepley/Hackathon Project Slideshow - Austin Shepley_page-0001.png", caption: "Caption 1" },
+          { url: "Hackathon Project Slideshow - Austin Shepley/Hackathon Project Slideshow - Austin Shepley_page-0002.png", caption: "Caption 2" },
+          { url: "Hackathon Project Slideshow - Austin Shepley/Hackathon Project Slideshow - Austin Shepley_page-0003.png", caption: "Caption 3" },
+          { url: "Hackathon Project Slideshow - Austin Shepley/Hackathon Project Slideshow - Austin Shepley_page-0004.png", caption: "Caption 4" },
+          { url: "Hackathon Project Slideshow - Austin Shepley/Hackathon Project Slideshow - Austin Shepley_page-0005.png", caption: "Caption 5" },
+          { url: "Hackathon Project Slideshow - Austin Shepley/Hackathon Project Slideshow - Austin Shepley_page-0006.png", caption: "Caption 6" },
+          { url: "Hackathon Project Slideshow - Austin Shepley/Hackathon Project Slideshow - Austin Shepley_page-0007.png", caption: "Caption 7" },
+          { url: "Hackathon Project Slideshow - Austin Shepley/Hackathon Project Slideshow - Austin Shepley_page-0008.png", caption: "Caption 8" },
+        ];
+
+        const imagesList7 = [
+          { url: "The Hack Kean 2022 - Jalen Thompson/The Hack Kean 2022 - Jalen Thompson_page-0001.png", caption: "Caption 1" },
+          { url: "The Hack Kean 2022 - Jalen Thompson/The Hack Kean 2022 - Jalen Thompson_page-0002.png", caption: "Caption 2" },
+          { url: "The Hack Kean 2022 - Jalen Thompson/The Hack Kean 2022 - Jalen Thompson_page-0003.png", caption: "Caption 3" },
+          { url: "The Hack Kean 2022 - Jalen Thompson/The Hack Kean 2022 - Jalen Thompson_page-0004.png", caption: "Caption 4" },
+          { url: "The Hack Kean 2022 - Jalen Thompson/The Hack Kean 2022 - Jalen Thompson_page-0005.png", caption: "Caption 5" },
+          { url: "The Hack Kean 2022 - Jalen Thompson/The Hack Kean 2022 - Jalen Thompson_page-0006.png", caption: "Caption 6" },
+          { url: "The Hack Kean 2022 - Jalen Thompson/The Hack Kean 2022 - Jalen Thompson_page-0007.png", caption: "Caption 8" },
+        ];
+
+        const imagesList8 = [
+          { url: "CraftyMessagesSlides - Naidelyn De La Rosa/CraftyMessagesSlides - Naidelyn De La Rosa_page-0001.png", caption: "Caption 1" },
+          { url: "CraftyMessagesSlides - Naidelyn De La Rosa/CraftyMessagesSlides - Naidelyn De La Rosa_page-0002.png", caption: "Caption 2" },
+          { url: "CraftyMessagesSlides - Naidelyn De La Rosa/CraftyMessagesSlides - Naidelyn De La Rosa_page-0003.png", caption: "Caption 3" },
+          { url: "CraftyMessagesSlides - Naidelyn De La Rosa/CraftyMessagesSlides - Naidelyn De La Rosa_page-0004.png", caption: "Caption 4" },
+          { url: "CraftyMessagesSlides - Naidelyn De La Rosa/CraftyMessagesSlides - Naidelyn De La Rosa_page-0005.png", caption: "Caption 5" },
+          { url: "CraftyMessagesSlides - Naidelyn De La Rosa/CraftyMessagesSlides - Naidelyn De La Rosa_page-0006.png", caption: "Caption 6" },      
+          { url: "CraftyMessagesSlides - Naidelyn De La Rosa/CraftyMessagesSlides - Naidelyn De La Rosa_page-0007.png", caption: "Caption 7" }, 
+        ];
+
+        const imagesList9 = [
+          { url: "Alon - HackKean - Andy Cordero/Alon - HackKean - Andy Cordero_page-0001.png", caption: "Caption 1" },
+          { url: "Alon - HackKean - Andy Cordero/Alon - HackKean - Andy Cordero_page-0002.png", caption: "Caption 2" },
+          { url: "Alon - HackKean - Andy Cordero/Alon - HackKean - Andy Cordero_page-0003.png", caption: "Caption 3" },
+          { url: "Alon - HackKean - Andy Cordero/Alon - HackKean - Andy Cordero_page-0004.png", caption: "Caption 4" },
+          { url: "Alon - HackKean - Andy Cordero/Alon - HackKean - Andy Cordero_page-0005.png", caption: "Caption 5" },
+          { url: "Alon - HackKean - Andy Cordero/Alon - HackKean - Andy Cordero_page-0006.png", caption: "Caption 6" },
+          { url: "Alon - HackKean - Andy Cordero/Alon - HackKean - Andy Cordero_page-0007.png", caption: "Caption 7" },
+          { url: "Alon - HackKean - Andy Cordero/Alon - HackKean - Andy Cordero_page-0008.png", caption: "Caption 8" },
+          { url: "Alon - HackKean - Andy Cordero/Alon - HackKean - Andy Cordero_page-0009.png", caption: "Caption 9" },
+        ];
+
+        const imagesList10 = [
+          { url: "Project Slideshow - Kush, Shubhm, & Het (2) - Shubhm Tarpara/Project Slideshow - Kush, Shubhm, & Het (2) - Shubhm Tarpara_page-0001.png", caption: "Caption 1" },
+          { url: "Project Slideshow - Kush, Shubhm, & Het (2) - Shubhm Tarpara/Project Slideshow - Kush, Shubhm, & Het (2) - Shubhm Tarpara_page-0002.png", caption: "Caption 2" },
+          { url: "Project Slideshow - Kush, Shubhm, & Het (2) - Shubhm Tarpara/Project Slideshow - Kush, Shubhm, & Het (2) - Shubhm Tarpara_page-0003.png", caption: "Caption 3" },
+          { url: "Project Slideshow - Kush, Shubhm, & Het (2) - Shubhm Tarpara/Project Slideshow - Kush, Shubhm, & Het (2) - Shubhm Tarpara_page-0004.png", caption: "Caption 4" },
+          { url: "Project Slideshow - Kush, Shubhm, & Het (2) - Shubhm Tarpara/Project Slideshow - Kush, Shubhm, & Het (2) - Shubhm Tarpara_page-0005.png", caption: "Caption 5" },
+          { url: "Project Slideshow - Kush, Shubhm, & Het (2) - Shubhm Tarpara/Project Slideshow - Kush, Shubhm, & Het (2) - Shubhm Tarpara_page-0006.png", caption: "Caption 6" },
+        ];
+
+        const imagesList11 = [
+          { url: "Calc-meleon Presentation - Alejandro Chavez-Mayoral/Calc-meleon Presentation - Alejandro Chavez-Mayoral_page-0001.png", caption: "Caption 1" },
+          { url: "Calc-meleon Presentation - Alejandro Chavez-Mayoral/Calc-meleon Presentation - Alejandro Chavez-Mayoral_page-0002.png", caption: "Caption 2" },
+          { url: "Calc-meleon Presentation - Alejandro Chavez-Mayoral/Calc-meleon Presentation - Alejandro Chavez-Mayoral_page-0003.png", caption: "Caption 3" },
+          { url: "Calc-meleon Presentation - Alejandro Chavez-Mayoral/Calc-meleon Presentation - Alejandro Chavez-Mayoral_page-0004.png", caption: "Caption 4" },
+          { url: "Calc-meleon Presentation - Alejandro Chavez-Mayoral/Calc-meleon Presentation - Alejandro Chavez-Mayoral_page-0005.png", caption: "Caption 5" },
+          { url: "Calc-meleon Presentation - Alejandro Chavez-Mayoral/Calc-meleon Presentation - Alejandro Chavez-Mayoral_page-0006.png", caption: "Caption 6" },
+          { url: "Calc-meleon Presentation - Alejandro Chavez-Mayoral/Calc-meleon Presentation - Alejandro Chavez-Mayoral_page-0007.png", caption: "Caption 7" },
+          { url: "Calc-meleon Presentation - Alejandro Chavez-Mayoral/Calc-meleon Presentation - Alejandro Chavez-Mayoral_page-0008.png", caption: "Caption 8" },
+          { url: "Calc-meleon Presentation - Alejandro Chavez-Mayoral/Calc-meleon Presentation - Alejandro Chavez-Mayoral_page-0009.png", caption: "Caption 9" },
+        ];
+
+        const imagesList12 = [
+          { url: "AdolescentBot - hackkean22 - Logan Valerio/AdolescentBot - hackkean22 - Logan Valerio_page-0001.png", caption: "Caption 1" },
+          { url: "AdolescentBot - hackkean22 - Logan Valerio/AdolescentBot - hackkean22 - Logan Valerio_page-0002.png", caption: "Caption 2" },
+          { url: "AdolescentBot - hackkean22 - Logan Valerio/AdolescentBot - hackkean22 - Logan Valerio_page-0003.png", caption: "Caption 3" },
+          { url: "AdolescentBot - hackkean22 - Logan Valerio/AdolescentBot - hackkean22 - Logan Valerio_page-0004.png", caption: "Caption 4" },
+          { url: "AdolescentBot - hackkean22 - Logan Valerio/AdolescentBot - hackkean22 - Logan Valerio_page-0005.png", caption: "Caption 5" },
+          { url: "AdolescentBot - hackkean22 - Logan Valerio/AdolescentBot - hackkean22 - Logan Valerio_page-0006.png", caption: "Caption 6" },
+          { url: "AdolescentBot - hackkean22 - Logan Valerio/AdolescentBot - hackkean22 - Logan Valerio_page-0007.png", caption: "Caption 7" },
+          { url: "AdolescentBot - hackkean22 - Logan Valerio/AdolescentBot - hackkean22 - Logan Valerio_page-0008.png", caption: "Caption 8" },
+          { url: "AdolescentBot - hackkean22 - Logan Valerio/AdolescentBot - hackkean22 - Logan Valerio_page-0009.png", caption: "Caption 9" },
+          { url: "AdolescentBot - hackkean22 - Logan Valerio/AdolescentBot - hackkean22 - Logan Valerio_page-0010.png", caption: "Caption 10" },
+        ];        
+
+        const imagesList13 = [
+          { url: "HackKean - Valmik Nahata/HackKean - Valmik Nahata_page-0001.png", caption: "Caption 1" },
+          { url: "HackKean - Valmik Nahata/HackKean - Valmik Nahata_page-0002.png", caption: "Caption 2" },
+          { url: "HackKean - Valmik Nahata/HackKean - Valmik Nahata_page-0003.png", caption: "Caption 3" },
+          { url: "HackKean - Valmik Nahata/HackKean - Valmik Nahata_page-0004.png", caption: "Caption 4" },
+          { url: "HackKean - Valmik Nahata/HackKean - Valmik Nahata_page-0005.png", caption: "Caption 5" },
+          { url: "HackKean - Valmik Nahata/HackKean - Valmik Nahata_page-0006.png", caption: "Caption 6" },
+          { url: "HackKean - Valmik Nahata/HackKean - Valmik Nahata_page-0007.png", caption: "Caption 7" },
+          { url: "HackKean - Valmik Nahata/HackKean - Valmik Nahata_page-0008.png", caption: "Caption 8" },
+        ];
+
+        const imagesList14 = [
+          { url: "HACKKEAN Presentation - Mahi Patel/HACKKEAN Presentation - Mahi Patel_page-0001.png", caption: "Caption 1" },
+          { url: "HACKKEAN Presentation - Mahi Patel/HACKKEAN Presentation - Mahi Patel_page-0002.png", caption: "Caption 2" },
+          { url: "HACKKEAN Presentation - Mahi Patel/HACKKEAN Presentation - Mahi Patel_page-0003.png", caption: "Caption 3" },
+          { url: "HACKKEAN Presentation - Mahi Patel/HACKKEAN Presentation - Mahi Patel_page-0004.png", caption: "Caption 4" },
+          { url: "HACKKEAN Presentation - Mahi Patel/HACKKEAN Presentation - Mahi Patel_page-0005.png", caption: "Caption 5" },
+        ];
+
+        const imagesList15 = [
+          { url: "The Seasonal Calendar By Keerthi Peruka, Lakshita Madhavan, Vidhi Patel - Keerthi Peruka/The Seasonal Calendar By Keerthi Peruka, Lakshita Madhavan, Vidhi Patel - Keerthi Peruka_page-0001.png", caption: "Caption 1" },
+          { url: "The Seasonal Calendar By Keerthi Peruka, Lakshita Madhavan, Vidhi Patel - Keerthi Peruka/The Seasonal Calendar By Keerthi Peruka, Lakshita Madhavan, Vidhi Patel - Keerthi Peruka_page-0002.png", caption: "Caption 2" },
+          { url: "The Seasonal Calendar By Keerthi Peruka, Lakshita Madhavan, Vidhi Patel - Keerthi Peruka/The Seasonal Calendar By Keerthi Peruka, Lakshita Madhavan, Vidhi Patel - Keerthi Peruka_page-0003.png", caption: "Caption 3" },
+          { url: "The Seasonal Calendar By Keerthi Peruka, Lakshita Madhavan, Vidhi Patel - Keerthi Peruka/The Seasonal Calendar By Keerthi Peruka, Lakshita Madhavan, Vidhi Patel - Keerthi Peruka_page-0004.png", caption: "Caption 4" },
+          { url: "The Seasonal Calendar By Keerthi Peruka, Lakshita Madhavan, Vidhi Patel - Keerthi Peruka/The Seasonal Calendar By Keerthi Peruka, Lakshita Madhavan, Vidhi Patel - Keerthi Peruka_page-0005.png", caption: "Caption 5" },
+          { url: "The Seasonal Calendar By Keerthi Peruka, Lakshita Madhavan, Vidhi Patel - Keerthi Peruka/The Seasonal Calendar By Keerthi Peruka, Lakshita Madhavan, Vidhi Patel - Keerthi Peruka_page-0006.png", caption: "Caption 6" },
+          { url: "The Seasonal Calendar By Keerthi Peruka, Lakshita Madhavan, Vidhi Patel - Keerthi Peruka/The Seasonal Calendar By Keerthi Peruka, Lakshita Madhavan, Vidhi Patel - Keerthi Peruka_page-0007.png", caption: "Caption 7" },
+        ];
+
+        const imagesList16 = [
+          { url: "Graphing_Calculator - Ujwal Thirunagari/Graphing_Calculator - Ujwal Thirunagari_page-0001.png", caption: "Caption 1" },
+          { url: "Graphing_Calculator - Ujwal Thirunagari/Graphing_Calculator - Ujwal Thirunagari_page-0002.png", caption: "Caption 2" },
+          { url: "Graphing_Calculator - Ujwal Thirunagari/Graphing_Calculator - Ujwal Thirunagari_page-0003.png", caption: "Caption 3" },
+          { url: "Graphing_Calculator - Ujwal Thirunagari/Graphing_Calculator - Ujwal Thirunagari_page-0004.png", caption: "Caption 4" },
+          { url: "Graphing_Calculator - Ujwal Thirunagari/Graphing_Calculator - Ujwal Thirunagari_page-0005.png", caption: "Caption 5" },
+          { url: "Graphing_Calculator - Ujwal Thirunagari/Graphing_Calculator - Ujwal Thirunagari_page-0006.png", caption: "Caption 6" },
+          { url: "Graphing_Calculator - Ujwal Thirunagari/Graphing_Calculator - Ujwal Thirunagari_page-0007.png", caption: "Caption 7" },
+          { url: "Graphing_Calculator - Ujwal Thirunagari/Graphing_Calculator - Ujwal Thirunagari_page-0008.png", caption: "Caption 8" },
+        ];
+
+        const imagesList17 = [
+          { url: "RoboSlayer Presentation - SquidwardSquad/RoboSlayer Presentation - SquidwardSquad_page-0001.png", caption: "Caption 1" },
+          { url: "RoboSlayer Presentation - SquidwardSquad/RoboSlayer Presentation - SquidwardSquad_page-0002.png", caption: "Caption 2" },
+          { url: "RoboSlayer Presentation - SquidwardSquad/RoboSlayer Presentation - SquidwardSquad_page-0003.png", caption: "Caption 3" },
+          { url: "RoboSlayer Presentation - SquidwardSquad/RoboSlayer Presentation - SquidwardSquad_page-0004.png", caption: "Caption 4" },
+          { url: "RoboSlayer Presentation - SquidwardSquad/RoboSlayer Presentation - SquidwardSquad_page-0005.png", caption: "Caption 5" },
+          { url: "RoboSlayer Presentation - SquidwardSquad/RoboSlayer Presentation - SquidwardSquad_page-0006.png", caption: "Caption 6" },
+          { url: "RoboSlayer Presentation - SquidwardSquad/RoboSlayer Presentation - SquidwardSquad_page-0007.png", caption: "Caption 7" },
+          { url: "RoboSlayer Presentation - SquidwardSquad/RoboSlayer Presentation - SquidwardSquad_page-0008.png", caption: "Caption 8" },
+          { url: "RoboSlayer Presentation - SquidwardSquad/RoboSlayer Presentation - SquidwardSquad_page-0009.png", caption: "Caption 9" },
+        ];
+
+        const imagesList18 = [
+          { url: "Bruce Liu, Vadim Yezhkov Flow - MiniWave 10/Bruce Liu, Vadim Yezhkov Flow - MiniWave 10_page-0001.png", caption: "Caption 1" },
+          { url: "Bruce Liu, Vadim Yezhkov Flow - MiniWave 10/Bruce Liu, Vadim Yezhkov Flow - MiniWave 10_page-0002.png", caption: "Caption 2" },
+          { url: "Bruce Liu, Vadim Yezhkov Flow - MiniWave 10/Bruce Liu, Vadim Yezhkov Flow - MiniWave 10_page-0003.png", caption: "Caption 3" },
+          { url: "Bruce Liu, Vadim Yezhkov Flow - MiniWave 10/Bruce Liu, Vadim Yezhkov Flow - MiniWave 10_page-0004.png", caption: "Caption 4" },
+        ];
+
+        const imagesList19 = [
+          { url: "Hack Kean 2022 - Jonathan Rivera/Hack Kean 2022 - Jonathan Rivera_page-0001.png", caption: "Caption 1" },
+          { url: "Hack Kean 2022 - Jonathan Rivera/Hack Kean 2022 - Jonathan Rivera_page-0002.png", caption: "Caption 2" },
+          { url: "Hack Kean 2022 - Jonathan Rivera/Hack Kean 2022 - Jonathan Rivera_page-0003.png", caption: "Caption 3" },
+          { url: "Hack Kean 2022 - Jonathan Rivera/Hack Kean 2022 - Jonathan Rivera_page-0004.png", caption: "Caption 4" },
+        ];
+
+        const imagesList20 = [
+          { url: "Hack Keane Cerberus End-to-end encrypted file transfer - Rohan Parikh/Hack Keane Cerberus End-to-end encrypted file transfer - Rohan Parikh_page-0001.png", caption: "Caption 1" },
+          { url: "Hack Keane Cerberus End-to-end encrypted file transfer - Rohan Parikh/Hack Keane Cerberus End-to-end encrypted file transfer - Rohan Parikh_page-0002.png", caption: "Caption 2" },
+          { url: "Hack Keane Cerberus End-to-end encrypted file transfer - Rohan Parikh/Hack Keane Cerberus End-to-end encrypted file transfer - Rohan Parikh_page-0003.png", caption: "Caption 3" },
+          { url: "Hack Keane Cerberus End-to-end encrypted file transfer - Rohan Parikh/Hack Keane Cerberus End-to-end encrypted file transfer - Rohan Parikh_page-0004.png", caption: "Caption 4" },
+        ];
+        
+        const imagesList21 = [
+          { url: "Hack Kean 2022 - Alexander Spiliotopoulos/Hack Kean 2022 - Alexander Spiliotopoulos_page-0001.png", caption: "Caption 1" },
+          { url: "Hack Kean 2022 - Alexander Spiliotopoulos/Hack Kean 2022 - Alexander Spiliotopoulos_page-0002.png", caption: "Caption 2" },
+          { url: "Hack Kean 2022 - Alexander Spiliotopoulos/Hack Kean 2022 - Alexander Spiliotopoulos_page-0003.png", caption: "Caption 3" },
+        ];
+
+        const imagesList22 = [
+          { url: "Capsule Wars Presentation - Antonios Theocharopoulos/Capsule Wars Presentation - Antonios Theocharopoulos_page-0001.png", caption: "Caption 1" },
+          { url: "Capsule Wars Presentation - Antonios Theocharopoulos/Capsule Wars Presentation - Antonios Theocharopoulos_page-0002.png", caption: "Caption 2" },
+          { url: "Capsule Wars Presentation - Antonios Theocharopoulos/Capsule Wars Presentation - Antonios Theocharopoulos_page-0003.png", caption: "Caption 3" },
+          { url: "Capsule Wars Presentation - Antonios Theocharopoulos/Capsule Wars Presentation - Antonios Theocharopoulos_page-0004.png", caption: "Caption 4" },
+          { url: "Capsule Wars Presentation - Antonios Theocharopoulos/Capsule Wars Presentation - Antonios Theocharopoulos_page-0005.png", caption: "Caption 5" },
+          { url: "Capsule Wars Presentation - Antonios Theocharopoulos/Capsule Wars Presentation - Antonios Theocharopoulos_page-0006.png", caption: "Caption 6" },
+          { url: "Capsule Wars Presentation - Antonios Theocharopoulos/Capsule Wars Presentation - Antonios Theocharopoulos_page-0007.png", caption: "Caption 7" },
+        ];
+
+        const imagesList23 = [
+          { url: "Our presentation - Rafael Galindo/Our presentation - Rafael Galindo_page-0001.png", caption: "Caption 1" },
+          { url: "Our presentation - Rafael Galindo/Our presentation - Rafael Galindo_page-0002.png", caption: "Caption 2" },
+          { url: "Our presentation - Rafael Galindo/Our presentation - Rafael Galindo_page-0003.png", caption: "Caption 3" },
+          { url: "Our presentation - Rafael Galindo/Our presentation - Rafael Galindo_page-0004.png", caption: "Caption 4" },
+        ];
+
+        let slider1 = new Slider("#slideshow-container1", imagesList1);
+        slider1.init();
+
+        let slider2 = new Slider("#slideshow-container2", imagesList2);
+        slider2.init();
+
+        let slider3 = new Slider("#slideshow-container3", imagesList3);
+        slider3.init();
+
+        let slider4 = new Slider("#slideshow-container4", imagesList4);
+        slider4.init();
+
+        let slider5 = new Slider("#slideshow-container5", imagesList5);
+        slider5.init();
+
+        let slider6 = new Slider("#slideshow-container6", imagesList6);
+        slider6.init();
+
+        let slider7 = new Slider("#slideshow-container7", imagesList7);
+        slider7.init();
+
+        let slider8 = new Slider("#slideshow-container8", imagesList8);
+        slider8.init();
+
+        let slider9 = new Slider("#slideshow-container9", imagesList9);
+        slider9.init();
+
+        let slider10 = new Slider("#slideshow-container10", imagesList10);
+        slider10.init();
+
+        let slider11 = new Slider("#slideshow-container11", imagesList11);
+        slider11.init();
+
+        let slider12 = new Slider("#slideshow-container12", imagesList12);
+        slider12.init();
+
+        let slider13 = new Slider("#slideshow-container13", imagesList13);
+        slider13.init();
+
+        let slider14 = new Slider("#slideshow-container14", imagesList14);
+        slider14.init();
+
+        let slider15 = new Slider("#slideshow-container15", imagesList15);
+        slider15.init();
+
+        let slider16 = new Slider("#slideshow-container16", imagesList16);
+        slider16.init();
+
+        let slider17 = new Slider("#slideshow-container17", imagesList17);
+        slider17.init();
+
+        let slider18 = new Slider("#slideshow-container18", imagesList18);
+        slider18.init();
+
+        let slider19 = new Slider("#slideshow-container19", imagesList19);
+        slider19.init();
+
+        let slider20 = new Slider("#slideshow-container20", imagesList20);
+        slider20.init();
+
+        let slider21 = new Slider("#slideshow-container21", imagesList21);
+        slider21.init();
+
+        let slider22 = new Slider("#slideshow-container22", imagesList22);
+        slider22.init();
+
+        let slider23 = new Slider("#slideshow-container23", imagesList23);
+        slider23.init();
+      });
+      
+      // Object to handle to slider
+      function Slider(container, imagesList){
+
+        this.containerjqObj = $(container);
+
+        // list of images to display on the page
+
+        this.imagesList = imagesList;
+
+        // image slide template
+
+        this._slideTemplage = `
+          <div class="column">
+            <div class="mySlides fade">
+              <img src="[SRC_URL]" data-position="[POSITION]" style="width:100%" />
+            </div>
+          </div>  
+        `;
+
+        this.topScrollBtn = $('<a class="topScrollBtn" style="display:none;">&#10094;</a>');
+        this.bottomScrollBtn = $('<a class="bottomScrollBtn" style="display:none;">&#10095;</a>');
+
+        this.mainImage = `<img class="mainImage" src="[SRC_URL]" data-position="[POSITION]" style="display:none;" />`;
+
+        this.modal = `
+          <div class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content">
+          </div>
+        `;
+
+        this.prev = document.createElement("a");
+        this.prev.setAttribute("class", "prev");
+        this.prev.innerHTML = "&#10094;"
+
+        this.next = document.createElement("a");
+        this.next.setAttribute("class", "next");
+        this.next.innerHTML = "&#10095;"       
+      }
+
+      Slider.prototype.init = function () {
+
+        // build the images
+        var i = 1;
+        for (img of this.imagesList) {
+          let imageHtml = this._slideTemplage;
+          let mainImageHtml = this.mainImage;
+          let position = i - 1; 
+          imageHtml = imageHtml
+                      .replace("[SRC_URL]", img.url)
+                      .replace("[CAPTION_TEXT]", img.caption)
+                      .replace("[POSITION]", position); 
+          if(i == this.imagesList.length) {
+            this.containerjqObj.append(imageHtml);
+            mainImageHtml = mainImageHtml
+                            .replace("[SRC_URL]", this.imagesList[0].url)
+                            .replace("[POSITION]", 0); 
+            this.containerjqObj.parent().append(mainImageHtml);
+          } else {
+            this.containerjqObj.append(imageHtml);
+          }
+          i++;
+        }
+
+        this.containerjqObj.parent().append(this.modal);
+        this.containerjqObj[0].nextElementSibling.nextElementSibling.append(this.prev); 
+        this.containerjqObj[0].nextElementSibling.nextElementSibling.append(this.next); 
+        
+        // add the top and bottom scroll buttons
+
+        if(this.containerjqObj[0].getElementsByTagName("img").length >= 5) {
+          this.containerjqObj.parent().append(this.topScrollBtn);
+          this.containerjqObj.parent().append(this.bottomScrollBtn);
+        }
+
+        this.topScrollBtn.on("click", () => {
+          this.containerjqObj[0].scrollTop += -10;
+        });
+
+        this.bottomScrollBtn.on("click", () => {
+          this.containerjqObj[0].scrollTop += 10;      
+        });
+
+        // current image
+
+        this.curSlideIdx = 0;
+
+        // show the current image
+
+        this.navigateSlide();
+      };
+
+      Slider.prototype._showSlides = function (){
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "block";  
+        }
+
+        slides[this.curSlideIdx].style.display = "block";  
+      };
+
+      Slider.prototype.navigateSlide = function () {
+        this._showSlides();
+      };
+    </script>
+  </body>
+</html>
