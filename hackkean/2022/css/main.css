@@ -1,0 +1,179 @@
+/*main setup*/
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap");
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inconsolata", monospace;
+  font-weight: 400;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inconsolata", monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 300;
+  background-color: gray;
+  -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
+}
+header {
+  background-color: #113b51;
+  min-height: 300px;
+  padding: 20px 5px 5px;
+}
+main {
+  background-color: #fdfdfd;
+  flex-grow: 1;
+}
+.logo {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+.logo .title {
+  color: white;
+  font-size: x-large;
+  font-weight: 600;
+}
+.logo .subtitle {
+  color: white;
+  font-size: large;
+}
+.logo a img {
+  width: 160px;
+  height: 160px;
+}
+nav {
+  padding: 20px 0px;
+  display: block;
+  text-align: center;
+}
+nav a,
+nav a:visited {
+  color: white;
+  text-decoration: none;
+  margin: 0px 10px;
+}
+nav a:hover {
+  color: rgb(93, 143, 250);
+  text-decoration: none;
+}
+a:visited,
+a:hover {
+  color: rgb(93, 143, 250);
+}
+@media only screen and (min-width: 992px) {
+  .logo {
+    flex-direction: column;
+  }
+  body {
+    flex-direction: row;
+  }
+  header {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+  }
+  main {
+    margin-left: 310px;
+    flex-grow: 1;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .logo .title,
+  .logo .subtitle {
+    display: none;
+  }
+  .logo {
+    margin-left: 20px;
+  }
+}
+/*home and events setup*/
+.page-content {
+  padding: 10px 10vw;
+}
+
+.page-content h1 {
+  text-align: center;
+  font-size: xx-large;
+  font-weight: 600;
+}
+.page-content h2 {
+  text-align: center;
+  font-weight: 400;
+}
+
+.headline span:nth-child(1) {
+  font-size: x-large;
+  font-weight: 800;
+}
+.headline span:nth-child(2) {
+  color: gray;
+}
+.headline span:nth-child(2)::before {
+  content: "(";
+}
+.headline span:nth-child(2)::after {
+  content: ")";
+}
+.meta {
+  color: gray;
+  margin-bottom: 10px;
+}
+
+/*about*/
+.officers {
+  text-align: center;
+  display: block;
+}
+.officer {
+  display: inline-block;
+  margin: 5px 20px;
+}
+
+.officer p:nth-child(1) {
+  font-weight: 600;
+}
+.officer p:nth-child(1) {
+}
+/*other pages*/
+.line {
+  font-size: x-large;
+  font-weight: 600;
+  display: block;
+  padding: 20px 0px;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+.tooltip div {
+  visibility: hidden;
+  background-color: #113b51;
+  color: #fff;
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 6px;
+
+  bottom: 100%;
+  margin-left: -60px;
+  position: absolute;
+  z-index: 1;
+}
+.tooltip:hover div {
+  visibility: visible;
+}
