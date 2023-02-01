@@ -31,6 +31,22 @@ main {
   background-color: #fdfdfd;
   flex-grow: 1;
 }
+.hackkeanmain{
+  background-color: #fdfdfd;
+  background-image: url("../assets/hackkeanbackground.png");
+  background-position: center;
+  background-size:cover;
+
+  background-blend-mode: multiply;
+  
+  flex-grow: 1;
+
+  /* color of text */
+  color : white;
+
+  padding-top: 100px;
+  padding-bottom: 75px;
+}
 .logo {
   text-align: center;
   display: flex;
@@ -52,7 +68,7 @@ main {
   height: 160px;
 }
 .logo b img {
-  width: 320px;
+  width: 420px;
   height: 320px;
 }
 nav {
@@ -90,6 +106,10 @@ a:hover {
     margin-left: 310px;
     flex-grow: 1;
   }
+  hackkeanmain{
+    margin-left: 310px;
+    flex-grow: 1;
+  }
   nav {
     display: flex;
     flex-direction: column;
@@ -109,7 +129,6 @@ a:hover {
 .page-content {
   padding: 10px 10vw;
 }
-
 .page-content h1 {
   text-align: center;
   font-size: xx-large;
@@ -119,7 +138,6 @@ a:hover {
   text-align: center;
   font-weight: 400;
 }
-
 .headline span:nth-child(1) {
   font-size: x-large;
   font-weight: 800;
@@ -137,7 +155,6 @@ a:hover {
   color: gray;
   margin-bottom: 10px;
 }
-
 /*about*/
 .officers {
   text-align: center;
@@ -147,7 +164,6 @@ a:hover {
   display: inline-block;
   margin: 5px 20px;
 }
-
 .officer p:nth-child(1) {
   font-weight: 600;
 }
@@ -193,11 +209,9 @@ a:hover {
   font-size: 15px;
   transition: 0.4s;
 }
-
 .active, .accordion:hover {
   background-color: #ccc;
 }
-
 .panel {
   padding: 0 18px;
   background-color: white;
